@@ -30,7 +30,7 @@
     header p {
       font-size: 1.1rem;
       color: #aaaacc;
-      max-width: 600px;
+      max-width: 620px;
       margin: 0 auto;
       line-height: 1.6;
     }
@@ -45,6 +45,68 @@
       border-radius: 20px;
       margin-bottom: 20px;
       letter-spacing: 1px;
+    }
+
+    .impacto {
+      background: #12122a;
+      text-align: center;
+      padding: 60px 20px;
+      border-bottom: 1px solid #2a2a4a;
+    }
+
+    .impacto h2 {
+      font-size: 1.8rem;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+
+    .impacto p {
+      max-width: 680px;
+      margin: 0 auto 20px;
+      color: #aaaacc;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .impacto .destaque-texto {
+      color: #e94560;
+      font-weight: bold;
+    }
+
+    .pilares {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 860px;
+      margin: 30px auto 0;
+    }
+
+    .pilar {
+      background: #1a1a2e;
+      border: 1px solid #2a2a4a;
+      border-radius: 12px;
+      padding: 24px 20px;
+      flex: 1 1 220px;
+      max-width: 260px;
+      text-align: center;
+    }
+
+    .pilar .icone {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .pilar h3 {
+      font-size: 1rem;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .pilar p {
+      font-size: 0.9rem;
+      color: #9999bb;
+      line-height: 1.5;
     }
 
     .cards {
@@ -68,13 +130,9 @@
       transition: transform 0.2s;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-    }
+    .card:hover { transform: translateY(-4px); }
 
-    .card.destaque {
-      border-color: #e94560;
-    }
+    .card.destaque { border-color: #e94560; }
 
     .card h2 {
       font-size: 1.3rem;
@@ -87,6 +145,13 @@
       font-weight: bold;
       color: #e94560;
       margin: 16px 0;
+    }
+
+    .card .preco small {
+      font-size: 1rem;
+      color: #9999bb;
+      display: block;
+      margin-top: 4px;
     }
 
     .card ul {
@@ -102,9 +167,7 @@
       font-size: 0.95rem;
     }
 
-    .card ul li::before {
-      content: "✅ ";
-    }
+    .card ul li::before { content: "✅ "; }
 
     .btn {
       display: inline-block;
@@ -118,15 +181,53 @@
       transition: background 0.2s;
     }
 
-    .btn:hover {
-      background: #c73652;
-    }
+    .btn:hover { background: #c73652; }
 
     .garantia {
       text-align: center;
-      padding: 20px;
+      padding: 16px 20px;
       color: #888899;
       font-size: 0.9rem;
+    }
+
+    .faq {
+      background: #12122a;
+      padding: 60px 20px;
+      border-top: 1px solid #2a2a4a;
+    }
+
+    .faq h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin-bottom: 36px;
+    }
+
+    .faq-lista {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .faq-item {
+      background: #1a1a2e;
+      border: 1px solid #2a2a4a;
+      border-radius: 12px;
+      padding: 24px 24px;
+    }
+
+    .faq-item h3 {
+      color: #e94560;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .faq-item p {
+      color: #aaaacc;
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
 
     footer {
@@ -141,33 +242,57 @@
 <body>
 
   <header>
-    <div class="badge">📝 SEMANA DO ENEM</div>
+    <div class="badge">📝 SEMANA DO ENEM 2026</div>
     <h1>Redação do ENEM do Zero</h1>
-    <p>Aprenda o método completo de redação com PDFs didáticos e podcasts de revisão — estude onde e como quiser antes da prova.</p>
+    <p>Um método estruturado, direto e comprovado em sala de aula — para você dominar a redação antes da prova, mesmo começando agora.</p>
   </header>
+
+  <section class="impacto">
+    <h2>Sua nota na redação <span class="destaque-texto">pode mudar</span> — e ainda dá tempo</h2>
+    <p>A redação vale até <strong>1000 pontos</strong> e é a competência que mais sofre por falta de método. Não é talento, não é dom: é estrutura. Com o método certo, você sabe exatamente o que escrever em cada parte — e o corretor percebe isso.</p>
+    <p>Este material foi desenvolvido e aplicado em aulas reais, com alunos reais. Pelo <span class="destaque-texto">preço de um lanche</span>, você tem acesso ao mesmo conteúdo.</p>
+
+    <div class="pilares">
+      <div class="pilar">
+        <div class="icone">🧱</div>
+        <h3>Estrutura clara</h3>
+        <p>Introdução, desenvolvimento e conclusão com um passo a passo que qualquer pessoa consegue seguir.</p>
+      </div>
+      <div class="pilar">
+        <div class="icone">🎯</div>
+        <h3>Argumentação sólida</h3>
+        <p>Aprenda a construir argumentos com fundamento, raciocínio e exemplo concreto — o que a banca quer ver.</p>
+      </div>
+      <div class="pilar">
+        <div class="icone">📋</div>
+        <h3>Proposta de intervenção</h3>
+        <p>Um dos pontos que mais derruba nota. Você vai aprender a montar uma proposta completa e detalhada.</p>
+      </div>
+    </div>
+  </section>
 
   <div class="cards">
 
     <div class="card">
       <h2>📄 Pacote Básico</h2>
-      <div class="preco">R$19</div>
+      <div class="preco">R$19<small>acesso imediato</small></div>
       <ul>
         <li>3 capítulos em PDF</li>
         <li>Introdução, desenvolvimento e conclusão</li>
         <li>Método completo passo a passo</li>
-        <li>Acesso imediato após o pagamento</li>
+        <li>Estude no celular, tablet ou computador</li>
       </ul>
       <a class="btn" href="SEU_LINK_KIWIFY_AQUI" target="_blank">Quero o PDF</a>
     </div>
 
     <div class="card destaque">
       <h2>🎧 Pacote Completo</h2>
-      <div class="preco">R$29</div>
+      <div class="preco">R$29<small>acesso imediato</small></div>
       <ul>
         <li>3 capítulos em PDF</li>
-        <li>3 podcasts de revisão</li>
-        <li>Estude ouvindo, no fone, no caminho</li>
-        <li>Acesso imediato após o pagamento</li>
+        <li>3 podcasts de revisão em áudio</li>
+        <li>Revise ouvindo, no fone, no caminho</li>
+        <li>Estude no celular, tablet ou computador</li>
       </ul>
       <a class="btn" href="SEU_LINK_KIWIFY_AQUI" target="_blank">Quero o Completo</a>
     </div>
@@ -175,11 +300,43 @@
   </div>
 
   <div class="garantia">
-    🔒 Pagamento seguro pela Kiwify &nbsp;|&nbsp; Acesso imediato após a confirmação
+    🔒 Pagamento seguro pela Kiwify &nbsp;|&nbsp; ↩️ Garantia de reembolso em 7 dias — sem perguntas
   </div>
 
+  <section class="faq">
+    <h2>Perguntas frequentes</h2>
+    <div class="faq-lista">
+
+      <div class="faq-item">
+        <h3>Para quem é esse material?</h3>
+        <p>Para qualquer candidato ao ENEM que quer melhorar a nota na redação, independente do nível atual. O método funciona tanto para quem nunca estudou redação quanto para quem já tem uma base e quer organizar melhor o texto.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Como recebo o material após o pagamento?</h3>
+        <p>Imediatamente após a confirmação do pagamento, você recebe um e-mail com o link para acessar e baixar os arquivos. Não precisa esperar.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Qual é a diferença entre os dois pacotes?</h3>
+        <p>O Pacote Básico inclui os três capítulos em PDF. O Pacote Completo inclui os PDFs mais três podcasts em áudio para revisar o conteúdo ouvindo — ideal para quem prefere aprender pelo ouvido ou quer estudar em movimento.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Tenho direito a reembolso?</h3>
+        <p>Sim. De acordo com o Código de Defesa do Consumidor (Art. 49), você tem 7 dias a partir da compra para solicitar o reembolso integral, sem precisar dar nenhuma justificativa. É seu direito por lei.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>O material funciona para outros vestibulares além do ENEM?</h3>
+        <p>Sim. O método é voltado para redação argumentativa, que é o formato exigido pelo ENEM e por praticamente todos os vestibulares e concursos públicos que cobram redação.</p>
+      </div>
+
+    </div>
+  </section>
+
   <footer>
-    Material desenvolvido para candidatos ao ENEM.
+    Material desenvolvido para candidatos ao ENEM. Todos os direitos reservados.
   </footer>
 
 </body>
