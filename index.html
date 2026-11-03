@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aulão de Redação ENEM 2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; color: #333; background: #f8f9fa; }
+
+        nav {
+            background: #1a1a2e;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo { color: white; font-size: 1.1rem; font-weight: bold; }
+        nav ul { list-style: none; display: flex; gap: 1.5rem; }
+        nav ul li a { color: #ccc; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        nav ul li a:hover { color: white; }
+
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+        .hero h1 { font-size: 2.4rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.05rem; color: #aab; max-width: 580px; margin: 0 auto; }
+
+        section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
+        section h2 {
+            font-size: 1.7rem;
+            margin-bottom: 2rem;
+            color: #0f3460;
+            border-left: 4px solid #e94560;
+            padding-left: 1rem;
+        }
+
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .card {
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.12); }
+        .card-header { background: #0f3460; color: white; padding: 1.4rem; }
+        .card-header .numero { font-size: 2rem; font-weight: bold; opacity: 0.3; }
+        .card-header h3 { font-size: 1.05rem; margin-top: 0.4rem; line-height: 1.4; }
+        .card-body { padding: 1.5rem; }
+        .card-body p { color: #666; font-size: 0.88rem; line-height: 1.65; margin-bottom: 1.2rem; }
+
+        .material-link {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.65rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.88rem;
+            margin-bottom: 0.5rem;
+            transition: filter 0.2s;
+            font-weight: 500;
+        }
+        .material-link:hover { filter: brightness(0.93); }
+        .video   { background: #fff0f3; color: #c0392b; }
+        .podcast { background: #f3f0ff; color: #6d28d9; }
+        .pdf     { background: #f0fff6; color: #059669; }
+
+        .bg-alt { background: white; padding: 0.1px 0; }
+
+        .recursos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+        .recurso-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.2rem;
+            border-top: 3px solid #e94560;
+        }
+        .recurso-card h4 { color: #0f3460; margin-bottom: 0.5rem; font-size: 0.95rem; }
+        .recurso-card p { color: #555; font-size: 0.85rem; line-height: 1.6; }
+        .recurso-card a { color: #e94560; font-size: 0.83rem; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 0.6rem; }
+
+        .tecnicas-section { margin-top: 2.5rem; }
+        .tecnicas-section h3 { color: #0f3460; font-size: 1.2rem; margin-bottom: 1rem; }
+        .tecnicas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 0.8rem; }
+        .tecnica-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            border-left: 3px solid #0f3460;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+        }
+        .tecnica-item .num { font-size: 0.75rem; color: #e94560; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; }
+        .tecnica-item h5 { color: #1a1a2e; font-size: 0.88rem; margin: 0.2rem 0; }
+        .tecnica-item p { color: #666; font-size: 0.8rem; line-height: 1.5; font-style: italic; }
+
+        .quiz-box {
+            background: linear-gradient(135deg, #0f3460, #e94560);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            color: white;
+        }
+        .quiz-box h3 { font-size: 1.6rem; margin-bottom: 0.8rem; }
+        .quiz-box p { opacity: 0.85; margin-bottom: 2rem; font-size: 1rem; }
+        .btn {
+            background: white;
+            color: #0f3460;
+            padding: 0.85rem 2.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.2s;
+            font-size: 0.95rem;
+        }
+        .btn:hover { transform: scale(1.05); }
+
+        .form-box {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+        }
+        .form-box p { color: #555; margin-bottom: 1.5rem; line-height: 1.7; }
+        .form-box iframe { border-radius: 10px; display: block; }
+
+        footer {
+            background: #1a1a2e;
+            color: #888;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.88rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.7rem; }
+            nav ul { gap: 0.8rem; }
+            nav ul li a { font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">📝 Aulão Redação ENEM 2026</div>
+    <ul>
+        <li><a href="#aulas">Aulas</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#redacao">Enviar Redação</a></li>
+    </ul>
+</nav>
+
+<div class="hero">
+    <h1>Aulão de Redação ENEM 2026</h1>
+    <p>Acesse os materiais das aulas, estude os recursos e envie sua redação para correção.</p>
+</div>
+
+<!-- AULAS -->
+<section id="aulas">
+    <h2>Aulas</h2>
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-header">
+                <div class="numero">01</div>
+                <h3>Introdução — Abordagem, Tese e Antecipação dos Argumentos</h3>
+            </div>
+            <div class="card-body">
+                <p>Aprenda a construir uma introdução impactante. Repertório sociocultural, tese clara e a antecipação dos dois argumentos que guiarão sua redação.</p>
+                <a href="SEU_LINK_AQUI" class="material-link video">▶ Vídeo da Aula 1</a>
+                <a href="SEU_LINK_AQUI" class="material-link podcast">🎙 Podcast — Aula 1</a>
+                <a href="SEU_LINK_AQUI" class="material-link pdf">📄 Resumo em PDF</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="numero">02</div>
+                <h3>Desenvolvimento 1 — Fundamentação, Aprofundamento e Reflexão</h3>
+            </div>
+            <div class="card-body">
+                <p>Construa o primeiro parágrafo de desenvolvimento com repertório sólido, raciocínio lógico, exemplos concretos e reflexão crítica.</p>
+                <a href="SEU_LINK_AQUI" class="material-link video">▶ Vídeo da Aula 2</a>
+                <a href="SEU_LINK_AQUI" class="material-link podcast">🎙 Podcast — Aula 2</a>
+                <a href="SEU_LINK_AQUI" class="material-link pdf">📄 Resumo em PDF</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="numero">03</div>
+                <h3>Desenvolvimento 2 e Conclusão — Proposta e Final Feliz</h3>
+            </div>
+            <div class="card-body">
+                <p>Finalize sua redação com o segundo desenvolvimento e uma conclusão nota 1000: proposta de intervenção completa e final feliz com retomada do repertório.</p>
+                <a href="SEU_LINK_AQUI" class="material-link video">▶ Vídeo da Aula 3</a>
+                <a href="SEU_LINK_AQUI" class="material-link podcast">🎙 Podcast — Aula 3</a>
+                <a href="SEU_LINK_AQUI" class="material-link pdf">📄 Resumo em PDF</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- RECURSOS -->
+<div class="bg-alt">
+<section id="recursos">
+    <h2>Recursos de Estudo</h2>
+
+    <div class="recursos-grid">
+
+        <div class="recurso-card">
+            <h4>🧠 O método: as 10 partes</h4>
+            <p>Abordagem · Tese · Antecipação · Tópico frasal (opcional) · Fundamentação · Aprofundamento · Reflexão crítica · Breve início (opcional) · Proposta · Final feliz.</p>
+        </div>
+
+        <div class="recurso-card">
+            <h4>🎯 DEMOAI — Gerador de argumentos</h4>
+            <p>Desigualdade · Egoísmo · Maldade humana · Omissão do Estado · Antigos pensamentos · Invisibilidade. Use dois argumentos distintos por redação.</p>
+        </div>
+
+        <div class="recurso-card">
+            <h4>⚖️ Conectivos: oposição vs. continuidade</h4>
+            <p>Use <strong>todavia / no entanto</strong> quando a fundamentação é positiva mas a realidade brasileira contradiz. Use conectivo de continuidade quando a fundamentação já descreve algo negativo.</p>
+        </div>
+
+        <div class="recurso-card">
+            <h4>🏗️ Os 5 elementos da proposta</h4>
+            <p>Agente · Ação · Meio · Finalidade · Detalhamento. Dica: use o Ministério relacionado ao tema + as escolas como agentes. Financiamento federal específico como meio.</p>
+        </div>
+
+        <div class="recurso-card">
+            <h4>🏁 Final feliz que vale 240 pontos</h4>
+            <p>Retome o repertório da introdução. Isso garante pontos na Competência 2 e mostra que seu texto está amarrado do início ao fim.</p>
+        </div>
+
+        <div class="recurso-card">
+            <h4>📚 Repertório coringa: BNCC</h4>
+            <p>A BNCC cabe em praticamente todos os eixos temáticos do ENEM. Peça à IA frases prontas para cada tema: meio ambiente, minorias, tecnologia e muito mais.</p>
+        </div>
+
+    </div>
+
+    <!-- 32 TÉCNICAS -->
+    <div class="tecnicas-section">
+        <h3>📋 32 Técnicas de Argumentação Inteligente</h3>
+        <div class="tecnicas-grid">
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 1</div>
+                <h5>Comparar teoria e prática</h5>
+                <p>"O direito previsto na lei X não tem sido realidade entre as vítimas."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 2</div>
+                <h5>Perceber causas</h5>
+                <p>"O problema X tem origem na causa Y."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 3</div>
+                <h5>Prever consequências</h5>
+                <p>"O problema X poderá fragilizar Y."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 4</div>
+                <h5>Identificar incoerências</h5>
+                <p>"É incoerente que o problema X seja realidade no Brasil mesmo com Y."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 5</div>
+                <h5>Propor soluções</h5>
+                <p>"É urgente que o problema X seja solucionado, sob pena de Y."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 6</div>
+                <h5>Denunciar a indiferença social</h5>
+                <p>"A sociedade é indiferente ao problema X."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 7</div>
+                <h5>Denunciar a perpetuação</h5>
+                <p>"O problema X ainda se perpetua de forma negativa na sociedade brasileira."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 8</div>
+                <h5>Enfatizar a crueldade humana</h5>
+                <p>"O problema X evidencia a maldade humana."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 9</div>
+                <h5>Direito x privilégio</h5>
+                <p>"O direito X, que deveria ser estendido a todos, representa um privilégio de poucos."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 10</div>
+                <h5>Denunciar a omissão do Estado</h5>
+                <p>"Não há políticas públicas capazes de interromper o problema X."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 11</div>
+                <h5>Criticar a subversão</h5>
+                <p>"X, que deveria servir para Y, se subverteu e transformou no problema Z."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 12</div>
+                <h5>Constatar a distopia</h5>
+                <p>"O problema X evidencia que o Brasil possui traços cruéis da obra distópica Y."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 13</div>
+                <h5>Criticar a manipulação</h5>
+                <p>"As vítimas do problema X são intuitivamente influenciadas por Y."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 14</div>
+                <h5>Constatar a dignidade humana fragilizada</h5>
+                <p>"O problema X fragiliza a dignidade humana das vítimas."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 15</div>
+                <h5>Denunciar o círculo vicioso</h5>
+                <p>"O problema evidencia um círculo vicioso: X motiva Y, o que gera ainda mais X."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 16</div>
+                <h5>Evidenciar um problema</h5>
+                <p>"X representa grave problema."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 17</div>
+                <h5>Interesse público x interesses particulares</h5>
+                <p>"O problema X evidencia que os políticos buscam apenas seus interesses particulares e são indiferentes à vontade coletiva."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 18</div>
+                <h5>Denunciar postura excludente</h5>
+                <p>"O problema X exclui as vítimas do direito a Y."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 19</div>
+                <h5>Denunciar política pública insuficiente</h5>
+                <p>"A iniciativa estatal se mostra insuficiente para a resolução do problema X."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 20</div>
+                <h5>Criticar a romantização</h5>
+                <p>"O problema X é romantizado pela sociedade brasileira."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 21</div>
+                <h5>Denunciar a falsa sensibilização</h5>
+                <p>"A sociedade brasileira não se sensibiliza com o problema sofrido pelas vítimas."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 22</div>
+                <h5>Denunciar a impunidade</h5>
+                <p>"Os responsáveis pelo problema X se mostram impunes."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 23</div>
+                <h5>Denunciar a subserviência social</h5>
+                <p>"O problema X subjuga as vítimas à subserviência social."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 24</div>
+                <h5>Anunciar o caos</h5>
+                <p>"O problema X levará a sociedade brasileira a experimentar o caos."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 25</div>
+                <h5>Denunciar a escassez extrema</h5>
+                <p>"O problema X levará as vítimas à extrema escassez de recursos."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 26</div>
+                <h5>Denunciar postura inconsequente</h5>
+                <p>"Inconscientemente, as vítimas praticam algo errado justamente por conta de se tratar de uma conduta comum na sociedade brasileira."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 27</div>
+                <h5>Denunciar a utopia</h5>
+                <p>"A ideologia X, embora seja o ideal para a sociedade brasileira, se mostra uma utopia."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 28</div>
+                <h5>Perceber a gradação</h5>
+                <p>"A manutenção do problema levará os indivíduos a experimentarem X, Y e Z." (do mais fraco ao mais forte)</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 29</div>
+                <h5>Denunciar a incapacidade</h5>
+                <p>"Os envolvidos se mostram incapazes de interromper o problema."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 30</div>
+                <h5>Denunciar a conivência por omissão</h5>
+                <p>"Os envolvidos se mostram coniventes com o problema, na medida em que, embora tenham consciência dele, não o combatem."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 31</div>
+                <h5>Denunciar a conveniência</h5>
+                <p>"É conveniente para o Poder Público que o problema persista, na medida em que o Estado se beneficia diretamente disso."</p>
+            </div>
+
+            <div class="tecnica-item">
+                <div class="num">Técnica 32</div>
+                <h5>Comparar realidades</h5>
+                <p>"O Brasil possui vítimas que vivem o problema denunciado por X."</p>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+</div>
+
+<!-- QUIZ -->
+<section id="quiz">
+    <h2>Quiz — Teste seu conhecimento</h2>
+    <div class="quiz-box">
+        <h3>🏆 Desafio do Aulão</h3>
+        <p>15 questões baseadas nas três aulas. Teste tudo que você aprendeu sobre introdução, desenvolvimento e conclusão da redação do ENEM.</p>
+        <a href="SEU_LINK_GOOGLE_FORMS_AQUI" class="btn">Fazer o Quiz agora →</a>
+    </div>
+</section>
+
+<!-- ENVIAR REDAÇÃO -->
+<section id="redacao">
+    <h2>Enviar Redação para Correção</h2>
+    <div class="form-box">
+        <p>Escreva sua redação, tire uma foto legível (boa iluminação, folha plana) e envie pelo formulário abaixo. O professor irá corrigir com base nas cinco competências do ENEM e devolver com comentários detalhados.</p>
+        <!-- Cole aqui o link de incorporação do seu Google Forms -->
+        <iframe
+            src="SEU_LINK_EMBED_GOOGLE_FORMS_AQUI"
+            width="100%"
+            height="620"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0">
+            Carregando formulário…
+        </iframe>
+    </div>
+</section>
+
+<footer>
+    <p>Aulão de Redação ENEM 2026 · Material de uso exclusivo dos alunos</p>
+</footer>
+
+</body>
+</html>
