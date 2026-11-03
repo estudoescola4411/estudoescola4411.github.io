@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Redação do ENEM do Zero</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f1a;
+      color: #f0f0f0;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      text-align: center;
+      padding: 60px 20px 40px;
+      border-bottom: 3px solid #e94560;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #aaaacc;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e94560;
+      color: white;
+      font-size: 0.85rem;
+      font-weight: bold;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #1a1a2e;
+      border: 1px solid #2a2a4a;
+      border-radius: 16px;
+      padding: 36px 30px;
+      flex: 1 1 320px;
+      max-width: 380px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card.destaque {
+      border-color: #e94560;
+    }
+
+    .card h2 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .card .preco {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #e94560;
+      margin: 16px 0;
+    }
+
+    .card ul {
+      list-style: none;
+      margin-bottom: 28px;
+      text-align: left;
+    }
+
+    .card ul li {
+      padding: 7px 0;
+      border-bottom: 1px solid #2a2a4a;
+      color: #ccccdd;
+      font-size: 0.95rem;
+    }
+
+    .card ul li::before {
+      content: "✅ ";
+    }
+
+    .btn {
+      display: inline-block;
+      background: #e94560;
+      color: white;
+      padding: 14px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #c73652;
+    }
+
+    .garantia {
+      text-align: center;
+      padding: 20px;
+      color: #888899;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #555577;
+      font-size: 0.85rem;
+      border-top: 1px solid #1a1a2e;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="badge">📝 SEMANA DO ENEM</div>
+    <h1>Redação do ENEM do Zero</h1>
+    <p>Aprenda o método completo de redação com PDFs didáticos e podcasts de revisão — estude onde e como quiser antes da prova.</p>
+  </header>
+
+  <div class="cards">
+
+    <div class="card">
+      <h2>📄 Pacote Básico</h2>
+      <div class="preco">R$19</div>
+      <ul>
+        <li>3 capítulos em PDF</li>
+        <li>Introdução, desenvolvimento e conclusão</li>
+        <li>Método completo passo a passo</li>
+        <li>Acesso imediato após o pagamento</li>
+      </ul>
+      <a class="btn" href="SEU_LINK_KIWIFY_AQUI" target="_blank">Quero o PDF</a>
+    </div>
+
+    <div class="card destaque">
+      <h2>🎧 Pacote Completo</h2>
+      <div class="preco">R$29</div>
+      <ul>
+        <li>3 capítulos em PDF</li>
+        <li>3 podcasts de revisão</li>
+        <li>Estude ouvindo, no fone, no caminho</li>
+        <li>Acesso imediato após o pagamento</li>
+      </ul>
+      <a class="btn" href="SEU_LINK_KIWIFY_AQUI" target="_blank">Quero o Completo</a>
+    </div>
+
+  </div>
+
+  <div class="garantia">
+    🔒 Pagamento seguro pela Kiwify &nbsp;|&nbsp; Acesso imediato após a confirmação
+  </div>
+
+  <footer>
+    Material desenvolvido para candidatos ao ENEM.
+  </footer>
+
+</body>
+</html>
