@@ -14,6 +14,16 @@
       min-height: 100vh;
     }
 
+    .urgencia {
+      background: #e94560;
+      text-align: center;
+      padding: 14px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      letter-spacing: 0.5px;
+    }
+
     header {
       background: linear-gradient(135deg, #1a1a2e, #16213e);
       text-align: center;
@@ -92,22 +102,11 @@
       text-align: center;
     }
 
-    .pilar .icone {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
+    .pilar .icone { font-size: 2rem; margin-bottom: 10px; }
 
-    .pilar h3 {
-      font-size: 1rem;
-      color: #ffffff;
-      margin-bottom: 8px;
-    }
+    .pilar h3 { font-size: 1rem; color: #ffffff; margin-bottom: 8px; }
 
-    .pilar p {
-      font-size: 0.9rem;
-      color: #9999bb;
-      line-height: 1.5;
-    }
+    .pilar p { font-size: 0.9rem; color: #9999bb; line-height: 1.5; }
 
     .cards {
       display: flex;
@@ -131,14 +130,9 @@
     }
 
     .card:hover { transform: translateY(-4px); }
-
     .card.destaque { border-color: #e94560; }
 
-    .card h2 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-      color: #ffffff;
-    }
+    .card h2 { font-size: 1.3rem; margin-bottom: 10px; color: #ffffff; }
 
     .card .preco {
       font-size: 2.5rem;
@@ -154,11 +148,7 @@
       margin-top: 4px;
     }
 
-    .card ul {
-      list-style: none;
-      margin-bottom: 28px;
-      text-align: left;
-    }
+    .card ul { list-style: none; margin-bottom: 28px; text-align: left; }
 
     .card ul li {
       padding: 7px 0;
@@ -168,6 +158,18 @@
     }
 
     .card ul li::before { content: "✅ "; }
+
+    .card .tag-unico {
+      display: inline-block;
+      background: #e9456022;
+      border: 1px solid #e94560;
+      color: #e94560;
+      font-size: 0.8rem;
+      font-weight: bold;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
 
     .btn {
       display: inline-block;
@@ -215,20 +217,12 @@
       background: #1a1a2e;
       border: 1px solid #2a2a4a;
       border-radius: 12px;
-      padding: 24px 24px;
+      padding: 24px;
     }
 
-    .faq-item h3 {
-      color: #e94560;
-      font-size: 1rem;
-      margin-bottom: 10px;
-    }
+    .faq-item h3 { color: #e94560; font-size: 1rem; margin-bottom: 10px; }
 
-    .faq-item p {
-      color: #aaaacc;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
+    .faq-item p { color: #aaaacc; font-size: 0.95rem; line-height: 1.6; }
 
     footer {
       text-align: center;
@@ -240,6 +234,10 @@
   </style>
 </head>
 <body>
+
+  <div class="urgencia">
+    ⚠️ O ENEM é dia 8 de novembro. Garanta sua correção até o dia 6 — só restam dias!
+  </div>
 
   <header>
     <div class="badge">📝 SEMANA DO ENEM 2026</div>
@@ -275,26 +273,28 @@
 
     <div class="card">
       <h2>📄 Pacote Básico</h2>
-      <div class="preco">R$19<small>acesso imediato</small></div>
+      <div class="preco">R$19,90<small>acesso imediato</small></div>
       <ul>
         <li>3 capítulos em PDF</li>
         <li>Introdução, desenvolvimento e conclusão</li>
         <li>Método completo passo a passo</li>
         <li>Estude no celular, tablet ou computador</li>
       </ul>
-      <a class="btn" href="https://pay.kiwify.com.br/P8zBacD" target="_blank">Quero o PDF</a>
+      <a class="btn" href="SEU_LINK_KIWIFY_BASICO" target="_blank">Quero o PDF</a>
     </div>
 
     <div class="card destaque">
+      <div class="tag-unico">🔥 OPORTUNIDADE ÚNICA</div>
       <h2>🎧 Pacote Completo</h2>
-      <div class="preco">R$29<small>acesso imediato</small></div>
+      <div class="preco">R$29,90<small>acesso imediato</small></div>
       <ul>
         <li>3 capítulos em PDF</li>
         <li>3 podcasts de revisão em áudio</li>
         <li>Revise ouvindo, no fone, no caminho</li>
-        <li>Estude no celular, tablet ou computador</li>
+        <li>Correção de uma redação com análise por competência</li>
+        <li>Feedback por e-mail com o que melhorar antes da prova</li>
       </ul>
-      <a class="btn" href="SEU_LINK_KIWIFY_AQUI" target="_blank">Quero o Completo</a>
+      <a class="btn" href="SEU_LINK_KIWIFY_COMPLETO" target="_blank">Quero o Completo</a>
     </div>
 
   </div>
@@ -309,7 +309,7 @@
 
       <div class="faq-item">
         <h3>Para quem é esse material?</h3>
-        <p>Para qualquer candidato ao ENEM que quer melhorar a nota na redação, independente do nível atual. O método funciona tanto para quem nunca estudou redação quanto para quem já tem uma base e quer organizar melhor o texto.</p>
+        <p>Para qualquer candidato ao ENEM. Se você está começando do zero, o método vai estruturar seu texto do início. Se você já escreve bem, a correção personalizada vai mostrar exatamente onde você ainda pode ganhar pontos — uma perspectiva que muitos candidatos avançados nunca tiveram antes da prova.</p>
       </div>
 
       <div class="faq-item">
@@ -319,12 +319,17 @@
 
       <div class="faq-item">
         <h3>Qual é a diferença entre os dois pacotes?</h3>
-        <p>O Pacote Básico inclui os três capítulos em PDF. O Pacote Completo inclui os PDFs mais três podcasts em áudio para revisar o conteúdo ouvindo — ideal para quem prefere aprender pelo ouvido ou quer estudar em movimento.</p>
+        <p>O Pacote Básico inclui os três capítulos em PDF. O Pacote Completo inclui os PDFs, três podcasts em áudio para revisar ouvindo, e ainda uma correção de redação com análise das 5 competências do ENEM e feedback enviado por e-mail com orientações específicas sobre o que melhorar. É uma oportunidade única por apenas R$29,90.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Como funciona a correção de redação?</h3>
+        <p>Após a compra do Pacote Completo, você recebe as instruções para enviar sua redação. A correção é feita com análise de cada uma das 5 competências do ENEM, e o feedback é devolvido por e-mail com comentários detalhados sobre o que você pode fazer para aumentar sua nota. Para garantir o retorno antes da prova, envie sua redação até o dia 6 de novembro.</p>
       </div>
 
       <div class="faq-item">
         <h3>Tenho direito a reembolso?</h3>
-        <p>Sim. De acordo com o Código de Defesa do Consumidor (Art. 49), você tem 7 dias a partir da compra para solicitar o reembolso integral, sem precisar dar nenhuma justificativa. É seu direito por lei.</p>
+        <p>Sim. De acordo com o Código de Defesa do Consumidor (Art. 49), você tem 7 dias a partir da compra para solicitar o reembolso integral, sem precisar dar nenhuma justificativa. É seu direito por lei, e a Kiwify processa isso automaticamente.</p>
       </div>
 
       <div class="faq-item">
