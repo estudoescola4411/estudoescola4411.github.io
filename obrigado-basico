@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compra confirmada!</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0f0f1a; color: #f0f0f0; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+    .box { background: #1a1a2e; border: 2px solid #e94560; border-radius: 16px; padding: 48px 36px; max-width: 480px; width: 100%; text-align: center; display: flex; flex-direction: column; gap: 20px; }
+    .icone { font-size: 3.5rem; }
+    h1 { color: #fff; font-size: 1.6rem; }
+    p { color: #aaaacc; font-size: 0.95rem; line-height: 1.6; }
+    .senha-bloco { background: #0f0f1a; border: 1px solid #2a2a4a; border-radius: 10px; padding: 20px; }
+    .senha-bloco p { color: #aaaacc; font-size: 0.85rem; margin-bottom: 8px; }
+    .senha { font-size: 1.5rem; font-weight: bold; color: #e94560; letter-spacing: 3px; }
+    .btn { display: inline-block; background: #e94560; color: white; padding: 14px 32px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1rem; }
+    .btn:hover { background: #c73652; }
+    .aviso { font-size: 0.85rem; color: #777799; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="icone">🎉</div>
+    <h1>Compra confirmada!</h1>
+    <p>Bem-vindo ao curso <strong>Redação do ENEM do Zero</strong>. Seu material está pronto para acessar agora.</p>
+    <div class="senha-bloco">
+      <p>Sua senha de acesso:</p>
+      <div class="senha">enem2026b</div>
+    </div>
+    <a class="btn" href="https://estudoescola4411.github.io/membros-basico.html" target="_blank">📄 Acessar meu material</a>
+    <p class="aviso">Salve esta página ou anote a senha — você vai precisar dela para entrar.</p>
+  </div>
+</body>
+</html>
