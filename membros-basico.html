@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Área de Membros — Pacote Básico</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0f0f1a; color: #f0f0f0; min-height: 100vh; }
+
+    #tela-senha {
+      position: fixed; inset: 0; background: #0f0f1a;
+      display: flex; align-items: center; justify-content: center; z-index: 1000; padding: 20px;
+    }
+    .senha-box {
+      background: #1a1a2e; border: 1px solid #2a2a4a; border-radius: 16px;
+      padding: 48px 36px; max-width: 420px; width: 100%; text-align: center;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .senha-box .logo { font-size: 3rem; }
+    .senha-box h1 { color: #fff; font-size: 1.5rem; }
+    .senha-box p { color: #aaaacc; font-size: 0.95rem; }
+    .senha-box input {
+      background: #0f0f1a; border: 1px solid #2a2a4a; border-radius: 8px;
+      padding: 14px 16px; color: #f0f0f0; font-size: 1rem; width: 100%;
+      outline: none; text-align: center; letter-spacing: 2px;
+    }
+    .senha-box input:focus { border-color: #e94560; }
+    .erro { color: #e94560; font-size: 0.9rem; display: none; }
+
+    #area-membros { display: none; }
+
+    header {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      text-align: center; padding: 40px 20px; border-bottom: 3px solid #e94560;
+    }
+    header .badge {
+      display: inline-block; background: #e94560; color: white;
+      font-size: 0.8rem; font-weight: bold; padding: 5px 14px;
+      border-radius: 20px; margin-bottom: 14px;
+    }
+    header h1 { font-size: 1.8rem; color: #fff; margin-bottom: 8px; }
+    header p { color: #aaaacc; font-size: 0.95rem; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px 60px; }
+
+    .section-title {
+      font-size: 1.2rem; color: #fff; margin-bottom: 20px; margin-top: 48px;
+      padding-bottom: 10px; border-bottom: 2px solid #e94560;
+    }
+
+    .tabs { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+    .tab-btn {
+      background: #1a1a2e; border: 1px solid #2a2a4a; color: #aaaacc;
+      padding: 10px 18px; border-radius: 8px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s;
+    }
+    .tab-btn.ativo { background: #e94560; border-color: #e94560; color: #fff; }
+    .tab-btn:hover:not(.ativo) { border-color: #e94560; color: #fff; }
+
+    .pdf-wrapper {
+      background: #1a1a2e; border: 1px solid #2a2a4a; border-radius: 12px; overflow: hidden;
+    }
+    .pdf-wrapper iframe { width: 100%; height: 620px; border: none; display: block; }
+    .pdf-abrir { background: #12122a; padding: 10px 16px; text-align: right; }
+    .pdf-abrir a { color: #aaaacc; font-size: 0.85rem; text-decoration: none; }
+    .pdf-abrir a:hover { color: #e94560; }
+
+    .upgrade-card {
+      background: #1a1a2e; border: 2px solid #e94560; border-radius: 12px;
+      padding: 36px 32px; text-align: center; margin-top: 48px;
+    }
+    .upgrade-card h3 { font-size: 1.2rem; color: #fff; margin-bottom: 12px; }
+    .upgrade-card p {
+      color: #aaaacc; font-size: 0.95rem; line-height: 1.7; margin-bottom: 24px;
+      max-width: 560px; margin-left: auto; margin-right: auto;
+    }
+
+    .btn {
+      display: inline-block; background: #e94560; color: white;
+      padding: 14px 32px; border-radius: 30px; text-decoration: none;
+      font-weight: bold; font-size: 1rem; transition: background 0.2s; border: none; cursor: pointer;
+    }
+    .btn:hover { background: #c73652; }
+
+    footer {
+      text-align: center; padding: 30px; color: #555577;
+      font-size: 0.85rem; border-top: 1px solid #1a1a2e;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="tela-senha">
+    <div class="senha-box">
+      <div class="logo">📝</div>
+      <h1>Área de Membros</h1>
+      <p>Pacote Básico — Redação do ENEM do Zero</p>
+      <input type="password" id="campo-senha" placeholder="Digite sua senha de acesso" />
+      <span class="erro" id="erro-senha">Senha incorreta. Verifique o e-mail de confirmação da compra.</span>
+      <button class="btn" onclick="verificarSenha()">Entrar</button>
+    </div>
+  </div>
+
+  <div id="area-membros">
+
+    <header>
+      <div class="badge">✅ ACESSO LIBERADO</div>
+      <h1>Redação do ENEM do Zero</h1>
+      <p>Bem-vindo! Seus capítulos em PDF estão disponíveis abaixo.</p>
+    </header>
+
+    <div class="container">
+
+      <h2 class="section-title">📄 Capítulos em PDF</h2>
+
+      <div class="tabs">
+        <button class="tab-btn ativo" onclick="abrirTab('cap1', this)">Capítulo 1 — Introdução</button>
+        <button class="tab-btn" onclick="abrirTab('cap2', this)">Capítulo 2 — Desenvolvimento</button>
+        <button class="tab-btn" onclick="abrirTab('cap3', this)">Capítulo 3 — Conclusão</button>
+      </div>
+
+      <div class="pdf-wrapper" id="cap1">
+        <iframe src="Introducao.pdf" title="Capítulo 1 — Introdução"></iframe>
+        <div class="pdf-abrir"><a href="Introducao.pdf" target="_blank">↗ Abrir em nova aba</a></div>
+      </div>
+      <div class="pdf-wrapper" id="cap2" style="display:none">
+        <iframe src="desenvolvimento.pdf" title="Capítulo 2 — Desenvolvimento"></iframe>
+        <div class="pdf-abrir"><a href="desenvolvimento.pdf" target="_blank">↗ Abrir em nova aba</a></div>
+      </div>
+      <div class="pdf-wrapper" id="cap3" style="display:none">
+        <iframe src="conclusao.pdf" title="Capítulo 3 — Conclusão"></iframe>
+        <div class="pdf-abrir"><a href="conclusao.pdf" target="_blank">↗ Abrir em nova aba</a></div>
+      </div>
+
+      <div class="upgrade-card">
+        <h3>🎧 Quer os podcasts de revisão + correção da sua redação?</h3>
+        <p>Faça upgrade para o Pacote Completo por apenas R$29,90 e receba análise das 5 competências do ENEM com feedback por e-mail antes da prova.</p>
+        <a class="btn" href="SEU_LINK_KIWIFY_COMPLETO" target="_blank">Quero o Pacote Completo</a>
+      </div>
+
+    </div>
+
+    <footer>Material desenvolvido para candidatos ao ENEM. Todos os direitos reservados.</footer>
+  </div>
+
+  <script>
+    function verificarSenha() {
+      const senha = document.getElementById('campo-senha').value;
+      const erro = document.getElementById('erro-senha');
+      if (senha === 'enem2026b') {
+        document.getElementById('tela-senha').style.display = 'none';
+        document.getElementById('area-membros').style.display = 'block';
+      } else {
+        erro.style.display = 'block';
+        document.getElementById('campo-senha').value = '';
+      }
+    }
+    document.getElementById('campo-senha').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') verificarSenha();
+    });
+    function abrirTab(id, btn) {
+      document.querySelectorAll('.pdf-wrapper').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('ativo'));
+      document.getElementById(id).style.display = 'block';
+      btn.classList.add('ativo');
+    }
+  </script>
+</body>
+</html>
